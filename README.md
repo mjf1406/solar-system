@@ -33,11 +33,22 @@ This is the site I put up for my students to use for differentiated content duri
     -   [ ] 3D Printing
 -   Site Goals
     -   Differentiated content accessible by a tab using search params
-    -   Themes
-        -   [ ] Space
-        -   [ ] White bg for reading
-        -   [ ] Play Books beige bg for reading
-        -   [ ] Black bg for reading
     -   Quizzes at the ends of each page to check for understanding
+-   Landing page
+    -   [x] hero
+    -   [ ] features
+    -   [ ] faq
+    -   [ ] footer
+-   Questions
+    -   What if the teacher wants to pick the level for their kids and not give them a chance to change the level?
+    -   Will it be fast enough if the tab is put into searchParams since that makes it a client component?
+    -
 
 ## Change Log
+
+### 2025/04/14
+
+-   UX: added the following v0.1 theme: space, light, dark, reading
+-   UX: added nightlight toggle
+-   UI: added levels as tabs, but is this the right decisions? Should each level be its own page?
+-   UI: set up a basic landing page with a hero section
