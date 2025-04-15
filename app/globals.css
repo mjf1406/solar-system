@@ -195,6 +195,10 @@
     }
 }
 
+.link {
+    text-decoration: underline;
+}
+
 .text-2xs {
     font-size: 0.6rem; /* 10px */
     line-height: 0.9rem; /* 14px */
