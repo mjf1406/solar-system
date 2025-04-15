@@ -21,7 +21,7 @@ export default function HowItWorks() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">The Levels</h3>
                 <p>
-                    All content has 8 different reading levels each tailored to
+                    All content has 8 different reading levels, each tailored to
                     a different grade:
                 </p>
                 <ul className="text-left ml-8 self-start">
