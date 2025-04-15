@@ -1,6 +1,8 @@
 /** @format */
 // @/components/LayoutTemplate.tsx
 
+import ScrollToTop from "./ScrollToTop";
+
 export default function ContentLayout({
     children,
 }: Readonly<{
@@ -8,7 +10,7 @@ export default function ContentLayout({
 }>) {
     return (
         <main className="w-full bg-muted h-dvh mx-auto flex flex-col items-center justify-start dark:bg-background dark:text-gray-300">
-            {children}
+            <ScrollToTop>{children}</ScrollToTop>
         </main>
     );
 }
