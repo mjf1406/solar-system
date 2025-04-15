@@ -195,6 +195,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .link {
     text-decoration: underline;
 }

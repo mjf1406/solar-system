@@ -48,17 +48,21 @@ export default function MainContentPage() {
 ];
 
   return (
-    <div className=" mx-auto py-10">
+    <div className="mx-auto py-10">
       {sections.map((section, idx) => (
         <div key={idx} className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">{section.title}</h2>
+          <Link href={`/content/${section.section}`}>
+            <h2 className="text-3xl font-bold mb-6 hover:underline cursor-pointer">
+              {section.title}
+            </h2>
+          </Link>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {section.passages.map((passage, i) => (
               <Card key={i} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="">
+                <CardHeader className="p-4">
                   <CardTitle className="text-xl">{passage.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="">
+                <CardContent className="p-4">
                   <p className="text-sm mb-4">{passage.summary}</p>
                   <Link 
                     href={passage.link}

@@ -1,5 +1,4 @@
 /** @format */
-
 const fs = require("fs-extra");
 const path = require("path");
 
@@ -37,6 +36,8 @@ async function generateMainContentPage() {
                 if (passageEnt.isDirectory()) {
                     const passageName = passageEnt.name; // e.g. "mercury", "venus", etc.
                     const passageTitle = titleCase(passageName);
+                    // Assuming the reading passage pages you generated live at: /app/content/<section>/<passage>/page.tsx
+                    // and that route becomes `/<section>/<passage>`.
                     const passageLink = `/content/${sectionName}/${passageName}`;
                     // Here we simply provide a placeholder summary.
                     const summary =
@@ -53,8 +54,8 @@ async function generateMainContentPage() {
             // Only add a section if there are passages.
             if (passages.length > 0) {
                 sections.push({
-                    section: sectionName,
-                    title: sectionTitle,
+                    section: sectionName, // we'll use this for linking (e.g. "solar-system")
+                    title: sectionTitle, // for display ("Solar System")
                     passages,
                 });
             }
@@ -62,12 +63,7 @@ async function generateMainContentPage() {
     }
 
     // Now generate the page file at /app/content/page.tsx.
-    // We will render each section with a header and a grid of cards.
-    //
-    // This example uses shadcn UI (Card, CardHeader, CardTitle, CardContent)
-    // and Next.js's Link component.
-    //
-    // Feel free to adjust the styling as needed.
+    // This page will render each section with a clickable header and a grid of cards.
     const outputContent = `/** @format */
 import Link from "next/link";
 import {
@@ -81,17 +77,21 @@ export default function MainContentPage() {
   const sections = ${JSON.stringify(sections, null, 2)};
 
   return (
-    <div className=" mx-auto py-10">
+    <div className="mx-auto py-10">
       {sections.map((section, idx) => (
         <div key={idx} className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">{section.title}</h2>
+          <Link href={\`/content/\${section.section}\`}>
+            <h2 className="text-3xl font-bold mb-6 hover:underline cursor-pointer">
+              {section.title}
+            </h2>
+          </Link>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {section.passages.map((passage, i) => (
               <Card key={i} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="">
+                <CardHeader className="p-4">
                   <CardTitle className="text-xl">{passage.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="">
+                <CardContent className="p-4">
                   <p className="text-sm mb-4">{passage.summary}</p>
                   <Link 
                     href={passage.link}
@@ -109,7 +109,6 @@ export default function MainContentPage() {
   );
 }
 `;
-
     const outputFile = path.join(CONTENT_DIR, "page.tsx");
     await fs.writeFile(outputFile, outputContent, "utf8");
     console.log(`Generated main content page: ${outputFile}`);

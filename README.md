@@ -29,15 +29,13 @@ This is the site I put up for my students to use for differentiated content duri
         -   [ ] Orbit Direction
     -   [ ] Lunar Phases
     -   [ ] Earth's Axial Tilt and Seasons
-    -   [ ] STEAM Activities
-    -   [ ] 3D Printing
 -   Site Goals
     -   Differentiated content accessible by a tab using search params
     -   Quizzes at the ends of each page to check for understanding
 -   Landing page
     -   [x] hero
-    -   [ ] features
-    -   [ ] faq
+    -   [x] features
+    -   [x] faq
     -   [ ] footer
 -   Questions
     -   What if the teacher wants to pick the level for their kids and not give them a chance to change the level?
