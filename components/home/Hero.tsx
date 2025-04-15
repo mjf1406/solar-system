@@ -64,7 +64,7 @@ export default function Hero() {
                             variant="default"
                             className="h-12 px-8 text-lg"
                         >
-                            <Link href="/content">Start reading!</Link>
+                            <Link href="/content">Start exploring content</Link>
                         </Button>
                         <Button
                             variant="outline"

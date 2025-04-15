@@ -6,6 +6,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { NavbarStatic } from "@/components/NavBar";
+import { APP_NAME } from "@/lib/constants";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Diffy",
+    title: APP_NAME,
     description: "Differentiated reading passages on a variety of topics",
 };
 

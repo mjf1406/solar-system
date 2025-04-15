@@ -1,4 +1,4 @@
-export const APP_NAME = 'Diffy'
+export const APP_NAME = 'Diffster'
 export const ALPHA_TESTERS_COUNT = 8
 export const DOMAIN_NAME = "diffy.com"
 export const LEVELS = [
