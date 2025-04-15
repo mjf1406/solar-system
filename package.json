@@ -7,7 +7,7 @@
         "generate:cards": "node scripts/generateContentCards.js",
         "generate:pages": "node scripts/generateArticlePages.js",
         "generate:content": "node scripts/generateMainContentPage.js",
-        "prebuild": "npm run generate:cards && npm run generate:pages",
+        "prebuild": "npm run generate:cards && npm run generate:pages && npm run generate:content",
         "build": "next build",
         "start": "next start",
         "lint": "next lint"
