@@ -15,7 +15,7 @@ This is the site I put up for my students to use for differentiated content duri
         -   Explains how the site works: all the URL stuff above, the methodology for content creation, the methodology for how the times were computed.
     -   **content.diffaroo.com**
         -   This is where all the content lives. This is the student-facing site. It's all they should ever see. It is made to be navigable by students.
-    -   **www.difaroo.oom**
+    -   **www.diffaroo.oom**
         -   this is just the landing page
 -   Build Process
     -   I want to have an LLM generate all levels based on the 8th grade passage. I would create, manually, the 8th grade level for each topic at each reading time, then have an LLM, at build time, generate the other levels using a very specific system prompt. This will have to be tested A LOT.
